@@ -40,7 +40,7 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 
 # Source files
 file(GLOB_RECURSE SOURCES "src/*.cpp" "src/*.c")
-file(GLOB_RECURSE HEADERS "include/*.h" "include/*.hpp")
+file(GLOB_RECURSE HEADERS "src/*.h" "src/*.hpp")
 
 # Create executable
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
