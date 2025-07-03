@@ -1,0 +1,7 @@
+/home/tmdmiranda/SDLProj/build-windows/CMakeFiles/SDL3Game.dir
+/home/tmdmiranda/SDLProj/build-windows/CMakeFiles/edit_cache.dir
+/home/tmdmiranda/SDLProj/build-windows/CMakeFiles/rebuild_cache.dir
+/home/tmdmiranda/SDLProj/build-windows/CMakeFiles/list_install_components.dir
+/home/tmdmiranda/SDLProj/build-windows/CMakeFiles/install.dir
+/home/tmdmiranda/SDLProj/build-windows/CMakeFiles/install/local.dir
+/home/tmdmiranda/SDLProj/build-windows/CMakeFiles/install/strip.dir

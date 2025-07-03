@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/tmdmiranda/SDLProj/build-linux",
+  "command": "/usr/sbin/c++ -I/home/tmdmiranda/SDLProj/include -I/home/tmdmiranda/SDLProj/third-party/sdl3-linux/include -O3 -DNDEBUG -std=gnu++17 -O3 -DNDEBUG -o CMakeFiles/SDL3Game.dir/src/main.cpp.o -c /home/tmdmiranda/SDLProj/src/main.cpp",
+  "file": "/home/tmdmiranda/SDLProj/src/main.cpp",
+  "output": "CMakeFiles/SDL3Game.dir/src/main.cpp.o"
+}
+]
