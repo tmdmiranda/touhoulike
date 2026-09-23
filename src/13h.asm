@@ -1,58 +1,18 @@
-[BITS 16]
+[BITS 32]
 
-segment _TEXT class=CODE
+segment _TEXT public align=4 class=CODE USE32
 
 global    set_mode_
-global    set_pixel_
-global    clear_screen_
-global    key_interrupt_
 global    check_key_
 global    wait_vblank_
 global    copy_buffer_
 
 
 set_mode_:
+  push    ebx
   mov     ah, 0x00
   int     0x10
-  ret
-
-set_pixel_:
-  push    es
-  push    di
-
-  mov     di, dx
-  shl     di, 8
-  shl     dx, 6
-  add     di, dx
-  add     di, ax
-
-  mov     ax, 0xA000
-  mov     es, ax
-
-  mov     [es:di], bl
-
-  pop     di
-  pop     es
-  ret
-
-clear_screen_:
-  push    es
-  push    di
-
-  mov     cx, 0xA000
-  mov     es, cx
-  xor     di, di
-  mov     cx, 64000
-  cld
-  rep     stosb
-  
-  pop     di
-  pop     es
-  ret
-
-key_interrupt_:
-  mov     ah, 0x00
-  int     0x16
+  pop     ebx
   ret
 
 
@@ -63,15 +23,15 @@ check_key_:
 
   mov     ah, 0x00
   int     0x16
-  mov     ah, 0
+  movzx   eax, al
   ret
 
 .no_key:
-  xor     ax, ax
+  xor     eax, eax
   ret
 
 wait_vblank_:
-  mov     dx, 0x03DA
+  mov     edx, 0x03DA
 
 .wait_end:
   in      al, dx
@@ -86,24 +46,16 @@ wait_vblank_:
   ret
 
 copy_buffer_:
-  push    ds
-  push    es
-  push    si
-  push    di
+  push    esi
+  push    edi
 
-  mov     ds, dx
-  mov     si, ax
+  mov     esi, eax
+  mov     edi, 0x000A0000
 
-  mov     ax, 0xA000
-  mov     es, ax
-  xor     di, di
-
-  mov     cx, 32000
+  mov     ecx, 16000
   cld
-  rep     movsw
-
-  pop     di
-  pop     si
-  pop     es
-  pop     ds
+  rep     movsd
+  
+  pop     edi
+  pop     esi
   ret

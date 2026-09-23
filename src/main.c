@@ -2,16 +2,13 @@
 #include <string.h>
 #include <malloc.h>
 
-void  set_mode(unsigned char mode);
-void  set_pixel(int x, int y, unsigned char color);
-void  clear_screen(unsigned char color);
-void  key_interrupt(void);
+void  set_mode(int mode);
 void  wait_vblank(void);
 int   check_key(void);
-void  copy_buffer(unsigned char __far *buf);
+void  copy_buffer(unsigned char *buf);
 
 
-unsigned char __far *screen_buffer; 
+unsigned char *screen_buffer; 
 
 void set_pixel_buffer(int x, int y, unsigned char color)
 {
@@ -20,11 +17,11 @@ void set_pixel_buffer(int x, int y, unsigned char color)
 
 void clear_buffer(unsigned char color)
 {
-  _fmemset(screen_buffer, color, 64000);
+  memset(screen_buffer, color, 64000);
 }
 
 
-void draw_square(int x, int y, int h, int l)
+void draw_square(int x, int y, int h, int l, int c)
 {
     int row, col;
     for (row = y; row < h + y; row++)
@@ -33,10 +30,10 @@ void draw_square(int x, int y, int h, int l)
             continue;
       for (col = x; col < x + l; col++)
       {
-        if (col < 0 || col >= 200)
+        if (col < 0 || col >= 320)
             continue;
 
-        set_pixel_buffer(col, row, 3);
+        set_pixel_buffer(col, row, c);
       }
     }
 }
@@ -44,15 +41,15 @@ void draw_square(int x, int y, int h, int l)
 
 void  display(void)
 {
-  draw_square(50, 50, 100, 100);
+  draw_square(50, 50, 100, 100, 3);
 }
 
 int   main()
 {
-  int sx, sy = 0;
-  int sh, sl = 20;
+  int sx = 100, sy = 50;
+  int sh= 20, sl = 20;
 
-  screen_buffer = (unsigned char far *)_fmalloc(64000U);
+  screen_buffer = (unsigned char *)malloc(64000);
   if (!screen_buffer)
   {
     return 1;
@@ -76,7 +73,7 @@ int   main()
   
     clear_buffer(0);
     display();
-    draw_square(sx, sy, sh, sl);
+    draw_square(sx, sy, sh, sl, 7);
     wait_vblank();
     copy_buffer(screen_buffer);
 
@@ -84,7 +81,7 @@ int   main()
 
   set_mode(0x03);
 
-  _ffree(screen_buffer);
+  free(screen_buffer);
   return 0;
 }
 
