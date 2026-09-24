@@ -24,9 +24,10 @@
             pkgs.tmux
             pkgs.clang-tools
             pkgs.nasm
+            pkgs.hyprshot
+            pkgs.asm-lsp
           ];
-
-          shellHook = ''
+shellHook = ''
             export WATCOM="${pkgs.open-watcom-v2}"
             export PATH="$WATCOM/binl64:$PATH"
             export EDPATH="$WATCOM/eddat"
@@ -37,39 +38,31 @@
             echo "Compiler: $(wcl -? 2>&1 | head -n 1)"
             echo "Emulator: dosbox-x"
 
-            # 1. compile_flags.txt (sem indentação nos itens)
-            cat << EOF > compile_flags.txt
+            # Remove conflicting legacy .clangd
+            rm -f .clangd
+
+            # Generate clean compile_flags.txt for clangd / Neovim LSP
+            cat << 'EOF' > compile_flags.txt
+--target=i386-pc-none-elf
+-fms-extensions
+-fdeclspec
 -nostdinc
--I$WATCOM/h
--I$WATCOM/h/dos
 -D__DOS__
--D__WATCOMC__=1200
--D__SW_MS
+-D__WATCOMC__=1300
+-D__386__
+-D_M_I386
+-D__interrupt=
 -D__far=
--D_far=
--Dfar=
--Wno-implicit-function-declaration
+-D__near=
+-D__watcall=
+-ferror-limit=0
 EOF
 
-            # 2. .clangd limpo (sem 'Compiler: wcl')
-            cat << EOF > .clangd
-CompileFlags:
-  Add:
-    - -nostdinc
-    - -I$WATCOM/h
-    - -I$WATCOM/h/dos
-    - -D__DOS__
-    - -D__WATCOMC__=1200
-    - -D__SW_MS
-    - -D__far=
-    - -D_far=
-    - -Dfar=
-    - -Wno-implicit-function-declaration
-EOF
+            echo "-I$WATCOM/h" >> compile_flags.txt
+            echo "-I$WATCOM/h/dos" >> compile_flags.txt
 
-            echo "⚡ Neovim LSP anchors (.clangd & compile_flags.txt) updated!"
+            echo "⚡ Neovim compile_flags.txt updated!"
           '';
-
          };
       });
 }
