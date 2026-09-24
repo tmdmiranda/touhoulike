@@ -14,7 +14,7 @@ set_mode_:
   int     0x10
   pop     ebx
   ret
-
+  
 
 check_key_:
   mov     ah, 0x01
