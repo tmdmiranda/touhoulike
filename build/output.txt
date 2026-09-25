@@ -1,0 +1,131 @@
+nasm -f obj main.asm -o main.obj
+main.asm:1: error: instruction expected, found `MZl '
+main.asm:2: error: label, instruction or prefix expected at start of line, found `'
+main.asm:3: error: label, instruction or prefix expected at start of line, found `'
+main.asm:4: warning: label `' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:5: warning: label `ÿÿT' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:7: error: label, instruction or prefix expected at start of line, found `'
+main.asm:9: warning: label `â' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:19: error: label, instruction or prefix expected at start of line, found `'
+main.asm:21: error: instruction expected, found `© '
+main.asm:23: error: instruction expected, found ` '
+main.asm:25: error: instruction expected, found `q '
+main.asm:27: warning: label `Ìëı' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:28: warning: label `¸' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:30: warning: label `è¡' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:31: warning: label `SQRV¾2' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:32: error: instruction expected, found `ë '
+main.asm:33: error: instruction expected, found `w '
+main.asm:34: error: instruction expected, found `» '
+main.asm:35: error: instruction expected, found `‰Ê‰ğè >'
+main.asm:36: error: instruction expected, found `Aƒùxvğëä ^'
+main.asm:37: warning: label `èq' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:38: error: instruction expected, found `¸ '
+main.asm:39: warning: label `è' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:40: warning: label `èR' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:41: error: label, instruction or prefix expected at start of line, found `='
+main.asm:42: error: instruction expected, found `t '
+main.asm:43: warning: label `t' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:44: error: label, instruction or prefix expected at start of line, found `1'
+main.asm:45: error: instruction expected, found `è¯ÿëé¸ '
+main.asm:46: error: instruction expected, found `è '
+main.asm:47: error: label, instruction or prefix expected at start of line, found `1'
+main.asm:48: error: instruction expected, found `Í '
+main.asm:49: error: instruction expected, found ` À &'
+main.asm:50: warning: label ` Á1ÿ¹' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:51: error: instruction expected, found `úüóª_ '
+main.asm:52: error: instruction expected, found `Í '
+main.asm:53: error: instruction expected, found `Í '
+main.asm:54: warning: label `Ã1ÀÃ' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:55: warning: unterminated string (missing `"') [-w+pp-open-string]
+main.asm:55: error: instruction expected, found `Œ '
+main.asm:56: warning: label `Ã' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:57: error: instruction expected, found `w '
+main.asm:58: error: instruction expected, found `t '
+main.asm:59: error: instruction expected, found `» '
+main.asm:60: error: instruction expected, found `é¬ '
+main.asm:62: error: instruction expected, found `ë7 '
+main.asm:63: error: label, instruction or prefix expected at start of line, found `*'
+main.asm:64: error: comma, colon, decorator or end of line expected after operand
+main.asm:64: error: invalid combination of opcode and operands
+main.asm:65: warning: label `con' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:67: warning: label `û¹N' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:68: warning: unterminated string (missing ``') [-w+pp-open-string]
+main.asm:68: error: instruction expected, found `Á» '
+main.asm:69: error: instruction expected, found `ƒÃ '
+main.asm:70: error: label, instruction or prefix expected at start of line, found `&'
+main.asm:71: error: label, instruction or prefix expected at start of line, found `'
+main.asm:72: error: instruction expected, found `‹ÓÑêÑêÑêÑê &'
+main.asm:74: error: instruction expected, found `u ='
+main.asm:75: error: instruction expected, found `ŒÀ +'
+main.asm:76: error: instruction expected, found `¸ '
+main.asm:77: error: instruction expected, found `‹Ú '
+main.asm:78: error: instruction expected, found `À +'
+main.asm:79: error: instruction expected, found `ŠMÿ2íü° ó®uÿºN'
+main.asm:80: error: instruction expected, found `Â &'
+main.asm:81: error: label, instruction or prefix expected at start of line, found `&'
+main.asm:82: error: label, instruction or prefix expected at start of line, found `&'
+main.asm:83: error: instruction expected, found `t '
+main.asm:84: error: label, instruction or prefix expected at start of line, found `&'
+main.asm:85: error: instruction expected, found `‹Ï <'
+main.asm:86: error: label, instruction or prefix expected at start of line, found `+'
+main.asm:87: error: label, instruction or prefix expected at start of line, found `'
+main.asm:88: warning: unterminated string (missing `'') [-w+pp-open-string]
+main.asm:88: error: label, instruction or prefix expected at start of line, found `='
+main.asm:89: error: instruction expected, found `‹D '
+main.asm:90: error: instruction expected, found `¬uú€ <'
+main.asm:91: error: instruction expected, found `uº¬FF€ <'
+main.asm:92: warning: label `¤uúÚ‹ñ‰6I' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:93: error: instruction expected, found `Œ '
+main.asm:94: warning: label `‹Ü‹Å¢4' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:95: error: label, instruction or prefix expected at start of line, found `&'
+main.asm:96: error: instruction expected, found `‰ >'
+main.asm:97: warning: unterminated string (missing ``') [-w+pp-open-string]
+main.asm:97: error: instruction expected, found `¹ '
+main.asm:98: error: instruction expected, found `¿ \'
+main.asm:99: error: label, instruction or prefix expected at start of line, found `+'
+main.asm:101: error: instruction expected, found `u '
+main.asm:102: error: instruction expected, found `Œ '
+main.asm:103: warning: label `£9' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:104: error: instruction expected, found `Œ '
+main.asm:105: error: instruction expected, found `£ ='
+main.asm:106: error: instruction expected, found `Œ '
+main.asm:107: error: label, instruction or prefix expected at start of line, found `3'
+main.asm:108: error: instruction expected, found `Œ '
+main.asm:109: warning: label `¸ÿ' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:110: error: instruction expected, found `èK '
+main.asm:111: error: instruction expected, found `Úü >'
+main.asm:113: error: instruction expected, found `Â¹ '
+main.asm:114: error: instruction expected, found `¸ '
+main.asm:115: warning: label `ŒÊ¼à' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:116: error: instruction expected, found `SPRŒÏßº '
+main.asm:117: error: instruction expected, found `´@Í !'
+main.asm:118: error: instruction expected, found `èG '
+main.asm:119: warning: label `P¸N' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:120: warning: label `ØXÃËË' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:121: error: instruction expected, found `é ,'
+main.asm:122: error: instruction expected, found `ÿ‰ØéøşR‹ '
+main.asm:123: error: instruction expected, found `¡ \'
+main.asm:124: error: instruction expected, found `è™üé '
+main.asm:125: error: instruction expected, found `u '
+main.asm:126: warning: label `‰ú»V' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:127: error: instruction expected, found `‰şˆÈ9ûs '
+main.asm:128: error: instruction expected, found `u '
+main.asm:129: error: instruction expected, found `‰ú» \'
+main.asm:130: error: instruction expected, found `‰şˆÈ9ûs '
+main.asm:131: error: instruction expected, found `u '
+main.asm:132: error: instruction expected, found `Ã€ >'
+main.asm:134: error: instruction expected, found `u '
+main.asm:135: error: instruction expected, found `ƒÄ '
+main.asm:136: warning: label `ºÿ' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:137: error: instruction expected, found `¸ '
+main.asm:138: error: instruction expected, found `ètÿÿ '
+main.asm:139: error: instruction expected, found `ÿ '
+main.asm:140: error: instruction expected, found `‰ØéÈı‰Âÿ '
+main.asm:141: error: instruction expected, found `ÿ '
+main.asm:142: warning: label `‰Ğé¹ı' alone on a line without a colon might be in error [-w+label-orphan]
+main.asm:155: error: label, instruction or prefix expected at start of line, found `'
+main.asm:200: error: label, instruction or prefix expected at start of line, found `'
+main.asm:203: error: instruction expected, found `§ '
+main.asm:204: warning: label `ª' alone on a line without a colon might be in error [-w+label-orphan]
+make: *** [Makefile:23: main.obj] Error 1

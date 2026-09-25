@@ -2,9 +2,33 @@
 #include <string.h>
 #include <malloc.h>
 
+
+#define SCAN_ESC   0x01
+#define SCAN_W     0x11
+#define SCAN_A     0x1E
+#define SCAN_S     0x1F
+#define SCAN_D     0x20
+
+
+extern volatile unsigned char keystate[128];
+extern void __interrupt __far kb_isr(void);
+
+void (__interrupt __far *old_kb_isr)(void);
+
+void install_keyboard()
+{
+  old_kb_isr = _dos_getvect(0x09);
+
+  _dos_setvect(0x09, kb_isr);
+}
+
+void uninstall_keyboard()
+{
+  _dos_setvect(0x09, old_kb_isr);
+}
+
 void  set_mode(int mode);
 void  wait_vblank(void);
-int   check_key(void);
 void  copy_buffer(unsigned char *buf);
 
 
@@ -54,22 +78,31 @@ int   main()
   {
     return 1;
   }
-
+  install_keyboard();
   set_mode(0x13);
 
-  while(1)
+  while(!keystate[SCAN_ESC])
   {
-    int key = check_key();
-
-    if (key == 27 || key == 'q') 
+    
+    if (keystate[SCAN_D])
     {
-      break;
+      sx += 2;
     }
-    if (key == 'd')
+    if (keystate[SCAN_A])
     {
-      sx += 1;
+      sx -= 2;
     }
-
+    if (keystate[SCAN_W])
+    {
+      sy -= 2;
+    }
+    if (keystate[SCAN_S])
+    {
+      sy += 2;
+    }
+    
+    
+    
   
     clear_buffer(0);
     display();
@@ -80,7 +113,8 @@ int   main()
   }
 
   set_mode(0x03);
-
+  
+  uninstall_keyboard();
   free(screen_buffer);
   return 0;
 }
