@@ -1,2 +1,5 @@
 ./build/game.exe
-./direnv
+.direnv/
+*.exe
+*.err
+*.obj
